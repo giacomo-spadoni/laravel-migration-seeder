@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TrainPage;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $dati = config("data");
-    return view('home', $dati);
-})->name("home");
+// Route::get('/', function () {
+//     $dati = config("data");
+//     return view('home', $dati);
+// })->name("home");
+
+Route::get('/', [TrainPage::class, 'index'])->name("home");
